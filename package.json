@@ -1,0 +1,30 @@
+
+{
+  "name": "sudarshan-chakra-365",
+  "version": "1.0.0",
+  "description": "AI-driven micro-task ecosystem with 365-day circular dashboard",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "server": "nodemon server/index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [
+    "ai",
+    "microtasks",
+    "learning",
+    "dashboard",
+    "react",
+    "node",
+    "postgres"
+  ],
+  "author": "Pravinkumar Raut",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}
