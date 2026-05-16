@@ -1,0 +1,183 @@
+🚀 1. Prerequisites (must have)
+
+Install these first:
+
+Node.js (v18+)
+PostgreSQL (running locally)
+Git (optional but useful)
+🗄️ 2. Database Setup (PostgreSQL)
+Step 1: Create DB
+CREATE DATABASE sudarshan_db;
+Step 2: Run Schema
+
+Open psql or PgAdmin and run:
+
+\c sudarshan_db
+
+Then execute:
+
+-- paste db/schema.sql here
+Step 3: Seed Data
+-- paste db/seeds.sql here
+
+✔ After this:
+
+365 tasks → LOADED
+4 users → AI, Parent, Child, Reviewer
+⚙️ 3. Backend Setup (Server)
+Step 1: Go to server
+cd server
+Step 2: Install dependencies
+npm install
+Step 3: Configure .env
+
+Create file: server/.env
+
+DB_USER=postgres
+DB_HOST=localhost
+DB_NAME=sudarshan_db
+DB_PASS=yourpassword
+DB_PORT=5432
+PORT=5000
+
+⚠️ Replace:
+
+yourpassword → your actual PostgreSQL password
+Step 4: Start server
+npm run dev
+
+✔ You should see:
+
+Server running on port 5000
+AI-Auto: Generating task (dev mode)...
+Step 5: Verify API
+
+Open browser:
+
+👉 http://localhost:5000/
+
+Expected:
+
+Sudarshan Chakra API Running 🚀
+🎨 4. Frontend Setup (Client)
+Step 1: Open new terminal
+cd client
+Step 2: Install dependencies
+npm install
+Step 3: Start React app
+npm start
+
+✔ Opens:
+👉 http://localhost:3000
+
+🔁 5. Run Full Flow (Manual Testing)
+Step-by-step in UI:
+🟣 Step 1: Select Task
+
+Dropdown:
+
+Day 1 - LOADED
+🟣 Step 2: Parent Action
+
+Click:
+
+Parent: Price Task
+
+✔ Status → PRICED
+
+🟠 Step 3: Child Action
+
+Click:
+
+Child: Submit Work
+
+✔ Status → SUBMITTED
+
+🟢 Step 4: Reviewer Action
+
+Click:
+
+Reviewer: Validate
+🎯 Result depends on answer:
+✅ If answer = "correct answer"
+Status → ACCEPTED
+💰 Money distributed
+Chakra → green increases
+❌ If answer ≠ "correct"
+
+(Change in code to test)
+
+answer: 'wrong'
+Status → REJECTED
+No money
+Chakra → red increases
+📊 6. Live Dashboard Behavior
+
+Every 5 seconds:
+
+setInterval(fetchStats, 5000)
+
+✔ Auto updates:
+
+Load (blue)
+Sponsored (purple)
+Worked (orange)
+Earned (green)
+Rejected (red)
+Trust %
+🔄 7. Optional: Run Both Together
+
+From root:
+
+npm install
+npm run dev
+
+✔ Runs:
+
+Backend (5000)
+Frontend (3000)
+🧪 8. Test APIs (Optional)
+
+Using Postman / curl:
+
+Price
+POST /api/tasks/price
+Submit
+POST /api/tasks/submit
+Review
+POST /api/tasks/review
+Stats
+GET /api/tasks/stats
+⚠️ Common Errors & Fixes
+❌ DB connection error
+
+👉 Check .env
+
+❌ Port 5000 already in use
+lsof -i :5000
+kill -9 <PID>
+❌ React not loading
+npm install
+npm start
+❌ Empty dropdown
+
+👉 Ensure seeds ran correctly
+
+🎉 FINAL RESULT
+
+You now have:
+
+✔ AI-generated 365 tasks
+✔ Parent → Child → Reviewer workflow
+✔ Reward distribution
+✔ Rejection flow
+✔ Circular Chakra dashboard
+✔ Live trust scoring
+
+🔥 You are demo-ready
+
+This MVP is:
+
+Hackathon-ready ✅
+Client demo-ready ✅
+Scalable base ✅
